@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
-  <title id="title">Обзор OWL/SWRL онтологий</title>
-  <desc id="desc">Три блока показывают академическую группу, семейные связи и медицинское SWRL-правило.</desc>
+  <title id="title">OWL/SWRL ontology overview</title>
+  <desc id="desc">Three cards show an academic group, family relations, and a medical SWRL rule.</desc>
   <defs>
     <style>
       .bg { fill: #f7f9fc; }
@@ -22,43 +22,43 @@
   </defs>
   <rect class="bg" width="1100" height="520"/>
   <text class="title" x="60" y="70">OWL/SWRL Ontology Models</text>
-  <text class="subtitle" x="60" y="105">Модели классов, свойств, индивидов и правил логического вывода</text>
+  <text class="subtitle" x="60" y="105">Models for classes, properties, individuals, and logical reasoning rules</text>
 
   <rect class="card" x="60" y="155" width="300" height="275"/>
   <text class="cardTitle" x="90" y="205">task1.ttl</text>
-  <text class="text" x="90" y="238">Академическая группа</text>
+  <text class="text" x="90" y="238">Academic group</text>
   <rect class="pillBlue" x="95" y="275" width="120" height="46" rx="23"/>
-  <text class="nodeText" x="155" y="298">Студент</text>
+  <text class="nodeText" x="155" y="298">Student</text>
   <rect class="pillGreen" x="205" y="350" width="130" height="46" rx="23"/>
-  <text class="nodeText" x="270" y="373">Сдавший</text>
+  <text class="nodeText" x="270" y="373">Passed</text>
   <rect class="pillRose" x="80" y="350" width="110" height="46" rx="23"/>
-  <text class="nodeText" x="135" y="373">Должник</text>
+  <text class="nodeText" x="135" y="373">Pending</text>
   <path class="line" d="M155 322 C150 338 142 340 137 350"/>
   <path class="line" d="M170 322 C195 342 220 342 245 350"/>
 
   <rect class="card" x="400" y="155" width="300" height="275"/>
   <text class="cardTitle" x="430" y="205">task2.ttl</text>
-  <text class="text" x="430" y="238">Семейные связи</text>
+  <text class="text" x="430" y="238">Family relations</text>
   <rect class="pillYellow" x="445" y="285" width="100" height="44" rx="22"/>
-  <text class="nodeText" x="495" y="307">Андрей</text>
+  <text class="nodeText" x="495" y="307">Andrey</text>
   <rect class="pillBlue" x="560" y="285" width="95" height="44" rx="22"/>
-  <text class="nodeText" x="607" y="307">Борис</text>
+  <text class="nodeText" x="607" y="307">Boris</text>
   <rect class="pillGreen" x="505" y="365" width="110" height="44" rx="22"/>
-  <text class="nodeText" x="560" y="387">Володя</text>
+  <text class="nodeText" x="560" y="387">Volodya</text>
   <path class="line" d="M545 307 L560 307"/>
   <path class="line" d="M607 329 L568 365"/>
-  <text class="text" x="443" y="352">имеет ребенка / родителя</text>
+  <text class="text" x="443" y="352">has child / parent</text>
 
   <rect class="card" x="740" y="155" width="300" height="275"/>
   <text class="cardTitle" x="770" y="205">task3</text>
-  <text class="text" x="770" y="238">Медицинское правило</text>
+  <text class="text" x="770" y="238">Medical rule</text>
   <rect class="pillBlue" x="780" y="282" width="105" height="44" rx="22"/>
-  <text class="nodeText" x="832" y="304">Пациент</text>
+  <text class="nodeText" x="832" y="304">Patient</text>
   <rect class="pillRose" x="910" y="282" width="95" height="44" rx="22"/>
-  <text class="nodeText" x="957" y="304">Диагноз</text>
+  <text class="nodeText" x="957" y="304">Diagnosis</text>
   <rect class="pillGreen" x="835" y="365" width="110" height="44" rx="22"/>
-  <text class="nodeText" x="890" y="387">Инсулин</text>
+  <text class="nodeText" x="890" y="387">Insulin</text>
   <path class="line" d="M885 304 L910 304"/>
   <path class="line" d="M838 326 C850 350 865 360 882 365"/>
-  <text class="text" x="780" y="352">SWRL: масса / 100 * 15</text>
+  <text class="text" x="780" y="352">SWRL: weight / 100 * 15</text>
 </svg>

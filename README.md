@@ -41,16 +41,14 @@
 Все файлы хранятся в UTF-8. Это важно для корректного отображения русскоязычных имен классов, свойств и индивидов.
 
 > **Автор проекта Зейналов У.Р.о.**
-
 ---
-
 <h2 id = "ontomonto">
 English Version
 </h2>
 
 A collection of OWL ontologies in Turtle (`.ttl`) format with visual diagrams and a SWRL rule for domain modeling and logical reasoning.
 
-![Ontology overview](docs/ontology-overview.svg)
+![Ontology overview](docs/ontology-overview-en.svg)
 
 ## Repository Contents
 
@@ -65,15 +63,15 @@ A collection of OWL ontologies in Turtle (`.ttl`) format with visual diagrams an
 
 ### Model 1: academic group
 
-![Academic group](docs/task1-students.svg)
+![Academic group](docs/task1-students-en.svg)
 
 ### Model 2: family relations
 
-![Family relations](docs/task2-family.svg)
+![Family relations](docs/task2-family-en.svg)
 
 ### Model 3: medical rule
 
-![Medical rule](docs/task3-medical-rule.svg)
+![Medical rule](docs/task3-medical-rule-en.svg)
 
 ## How to Open
 

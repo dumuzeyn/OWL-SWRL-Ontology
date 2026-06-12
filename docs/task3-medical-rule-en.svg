@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+  <title id="title">Medical ontology and SWRL rule</title>
+  <desc id="desc">Anton has a diagnosis, indication, and weight; the SWRL rule assigns insulin and calculates medicine volume.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfcfe; }
+      .h { fill: #182235; font: 700 30px Arial, sans-serif; }
+      .node { fill: #fff; stroke: #cbd6e2; stroke-width: 2; rx: 8; }
+      .patient { fill: #e8f2ff; stroke: #7db0dd; }
+      .diag { fill: #ffe7ea; stroke: #df7e88; }
+      .drug { fill: #e7f8e2; stroke: #82bd72; }
+      .weight { fill: #fff3cf; stroke: #d2ad4a; }
+      .rule { fill: #f1edff; stroke: #9a83d8; }
+      .label { fill: #172033; font: 700 17px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .small { fill: #526070; font: 15px Arial, sans-serif; text-anchor: middle; }
+      .edge { stroke: #5d6878; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .calc { stroke: #7e65c7; stroke-width: 3; fill: none; marker-end: url(#arrowRule); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5d6878"/>
+    </marker>
+    <marker id="arrowRule" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#7e65c7"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1080" height="560"/>
+  <text class="h" x="60" y="70">task3: medical ontology and SWRL inference</text>
+
+  <rect class="node patient" x="80" y="230" width="150" height="70"/>
+  <text class="label" x="155" y="257">Anton</text>
+  <text class="small" x="155" y="281">Patient</text>
+
+  <rect class="node diag" x="330" y="110" width="190" height="70"/>
+  <text class="label" x="425" y="138">Type 2 diabetes</text>
+  <text class="small" x="425" y="162">Diagnosis</text>
+
+  <rect class="node weight" x="330" y="245" width="190" height="70"/>
+  <text class="label" x="425" y="273">Anton's weight</text>
+  <text class="small" x="425" y="297">mass = 70</text>
+
+  <rect class="node" x="330" y="380" width="190" height="70"/>
+  <text class="label" x="425" y="407">Indication</text>
+  <text class="small" x="425" y="431">Anton's tests</text>
+
+  <rect class="node drug" x="650" y="380" width="150" height="70"/>
+  <text class="label" x="725" y="407">Insulin</text>
+  <text class="small" x="725" y="431">Medicine</text>
+
+  <rect class="node rule" x="665" y="170" width="290" height="105"/>
+  <text class="label" x="810" y="202">Rule_AssignInsulin</text>
+  <text class="small" x="810" y="230">dose = weight / 100 * 15</text>
+  <text class="small" x="810" y="252">for 70 kg: 10.5</text>
+
+  <path class="edge" d="M230 250 C265 210 295 170 330 145"/>
+  <text class="small" x="285" y="196">has diagnosis</text>
+  <path class="edge" d="M230 270 L330 280"/>
+  <text class="small" x="280" y="260">has weight</text>
+  <path class="edge" d="M230 292 C265 340 300 385 330 415"/>
+  <text class="small" x="278" y="354">has indication</text>
+  <path class="edge" d="M520 415 L650 415"/>
+  <text class="small" x="585" y="398">matches</text>
+
+  <path class="calc" d="M520 280 C590 252 620 230 665 222"/>
+  <path class="calc" d="M800 380 C820 340 820 310 810 275"/>
+  <text class="small" x="880" y="340">assigns medicine</text>
+  <text class="small" x="880" y="362">and volume</text>
+</svg>

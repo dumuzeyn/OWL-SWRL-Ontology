@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">Family relations ontology</title>
+  <desc id="desc">A chain of people connected by the has child object property.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fbfcfe; }
+      .h { fill: #182235; font: 700 30px Arial, sans-serif; }
+      .node { fill: #fff8dd; stroke: #d0a93d; stroke-width: 2; rx: 8; }
+      .label { fill: #172033; font: 700 18px Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .edge { stroke: #5a6878; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .edgeBack { stroke: #7c8794; stroke-width: 2; stroke-dasharray: 7 6; fill: none; marker-end: url(#arrowBack); }
+      .text { fill: #526070; font: 15px Arial, sans-serif; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5a6878"/>
+    </marker>
+    <marker id="arrowBack" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#7c8794"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1000" height="420"/>
+  <text class="h" x="60" y="70">task2.ttl: inverse family properties</text>
+
+  <rect class="node" x="70" y="175" width="130" height="64"/>
+  <text class="label" x="135" y="207">Andrey</text>
+  <rect class="node" x="270" y="175" width="130" height="64"/>
+  <text class="label" x="335" y="207">Boris</text>
+  <rect class="node" x="470" y="175" width="130" height="64"/>
+  <text class="label" x="535" y="207">Volodya</text>
+  <rect class="node" x="670" y="175" width="130" height="64"/>
+  <text class="label" x="735" y="207">Gosha</text>
+  <rect class="node" x="845" y="175" width="130" height="64"/>
+  <text class="label" x="910" y="207">Dmitry</text>
+
+  <path class="edge" d="M200 195 L270 195"/>
+  <path class="edge" d="M400 195 L470 195"/>
+  <path class="edge" d="M600 195 L670 195"/>
+  <path class="edge" d="M800 195 L845 195"/>
+
+  <path class="edgeBack" d="M270 225 L200 225"/>
+  <path class="edgeBack" d="M470 225 L400 225"/>
+  <path class="edgeBack" d="M670 225 L600 225"/>
+  <path class="edgeBack" d="M845 225 L800 225"/>
+
+  <text class="text" x="235" y="165">has child</text>
+  <text class="text" x="435" y="165">has child</text>
+  <text class="text" x="635" y="165">has child</text>
+  <text class="text" x="825" y="165">has child</text>
+  <text class="text" x="500" y="295">has parent is defined as inverseOf has child</text>
+</svg>
