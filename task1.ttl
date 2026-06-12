@@ -31,8 +31,8 @@
          rdfs:subClassOf :Студент .
 
 
-###  http://www.semanticweb.org/rasul/ontologies/2025/11/untitled-ontology-2#Преподователь
-:Преподователь rdf:type owl:Class .
+###  http://www.semanticweb.org/rasul/ontologies/2025/11/untitled-ontology-2#Преподаватель
+:Преподаватель rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/rasul/ontologies/2025/11/untitled-ontology-2#Сдавший
@@ -74,7 +74,7 @@
 
 ###  http://www.semanticweb.org/rasul/ontologies/2025/11/untitled-ontology-2#Павел_Аркадович
 :Павел_Аркадович rdf:type owl:NamedIndividual ,
-                          :Преподователь ;
+                          :Преподаватель ;
                  :Относиться_плохо :Гриша ;
                  :Относиться_хорошо :Андрей ,
                                     :Антон ,

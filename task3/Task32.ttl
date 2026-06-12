@@ -3,25 +3,92 @@
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://www.semanticweb.org/rasul/ontologies/2025/11/untitled-ontology-4/> .
 
 #################################################################
-# SWRL Rule: Назначение лекарства с дозировкой
+#    SWRL Variables
+#################################################################
+
+:p rdf:type swrl:Variable .
+:ind rdf:type swrl:Variable .
+:weightInd rdf:type swrl:Variable .
+:mass rdf:type swrl:Variable .
+:m100 rdf:type swrl:Variable .
+:dose rdf:type swrl:Variable .
+
+#################################################################
+#    SWRL Rule: назначение инсулина с расчетом дозировки
 #################################################################
 
 :Rule_AssignInsulin
     rdf:type swrl:Imp ;
+    rdfs:label "Назначение инсулина с расчетом дозировки"@ru ;
+    rdfs:comment "Если пациент имеет диагноз диабет 2-го типа, показание к инсулину и известную массу тела, правило рассчитывает дозу: масса / 100 * 15."@ru ;
     swrl:body (
-        [ swrl:argument1 ?p ; swrl:classPredicate :Пациент ]
-        [ swrl:argument1 ?p ; swrl:argument2 :Диабет_2-ого_типа ; swrl:propertyPredicate :ИмеетДиагноз ]
-        [ swrl:argument1 ?p ; swrl:argument2 ?ind ; swrl:propertyPredicate :ИмеетПоказание ]
-        [ swrl:argument1 ?ind ; swrl:argument2 :Инсулин ; swrl:propertyPredicate :СоответсвуетЛекарство ]
-        [ swrl:argument1 ?p ; swrl:argument2 ?weightInd ; swrl:propertyPredicate :ИмеетВес ]
-        [ swrl:argument1 ?weightInd ; swrl:argument2 ?mass ; swrl:propertyPredicate :Масса_Антона ]
-        [ swrl:argument1 ?m100 ; swrlb:divide(?m100, ?mass, 100) ]
-        [ swrl:argument1 ?dose ; swrlb:multiply(?dose, ?m100, 15) ]
+        [
+            rdf:type swrl:ClassAtom ;
+            swrl:classPredicate :Пациент ;
+            swrl:argument1 :p
+        ]
+        [
+            rdf:type swrl:IndividualPropertyAtom ;
+            swrl:propertyPredicate :ИмеетДиагноз ;
+            swrl:argument1 :p ;
+            swrl:argument2 :Диабет_2-ого_типа
+        ]
+        [
+            rdf:type swrl:IndividualPropertyAtom ;
+            swrl:propertyPredicate :ИмеетПоказание ;
+            swrl:argument1 :p ;
+            swrl:argument2 :ind
+        ]
+        [
+            rdf:type swrl:IndividualPropertyAtom ;
+            swrl:propertyPredicate :СоответствуетЛекарство ;
+            swrl:argument1 :ind ;
+            swrl:argument2 :Инсулин
+        ]
+        [
+            rdf:type swrl:IndividualPropertyAtom ;
+            swrl:propertyPredicate :ИмеетВес ;
+            swrl:argument1 :p ;
+            swrl:argument2 :weightInd
+        ]
+        [
+            rdf:type swrl:DatavaluedPropertyAtom ;
+            swrl:propertyPredicate :Масса_Антона ;
+            swrl:argument1 :weightInd ;
+            swrl:argument2 :mass
+        ]
+        [
+            rdf:type swrl:BuiltinAtom ;
+            swrl:builtin swrlb:divide ;
+            swrl:arguments ( :m100 :mass 100 )
+        ]
+        [
+            rdf:type swrl:BuiltinAtom ;
+            swrl:builtin swrlb:multiply ;
+            swrl:arguments ( :dose :m100 15 )
+        ]
     ) ;
     swrl:head (
-        [ swrl:argument1 ?p ; swrl:classPredicate :Назначение ]
-        [ swrl:argument1 ?p ; swrl:argument2 :Инсулин ; swrl:propertyPredicate :СоответсвуетЛекарство ]
-        [ swrl:argument1 ?p ; swrl:argument2 ?dose ; swrl:propertyPredicate :Обьем_лекарства ]
+        [
+            rdf:type swrl:ClassAtom ;
+            swrl:classPredicate :Назначение ;
+            swrl:argument1 :p
+        ]
+        [
+            rdf:type swrl:IndividualPropertyAtom ;
+            swrl:propertyPredicate :СоответствуетЛекарство ;
+            swrl:argument1 :p ;
+            swrl:argument2 :Инсулин
+        ]
+        [
+            rdf:type swrl:DatavaluedPropertyAtom ;
+            swrl:propertyPredicate :Объем_лекарства ;
+            swrl:argument1 :p ;
+            swrl:argument2 :dose
+        ]
     ) .
